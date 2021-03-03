@@ -57,16 +57,15 @@ public class EmployeeService implements IService<Employee, EmployeeDTO, Employee
 
   @Override
   public void delete(Long id) {
-    employeeRepository.delete(existsById(id));
+    Employee repoEmployee = existsById(id);
+    employeeRepository.delete(repoEmployee);
   }
 
   @Override
   public Employee update(Long id, EmployeeUpdateDTO updateDTO) {
     Employee repoEmployee = existsById(id);
-    // update object
-    repoEmployee.setId(id);
     repoEmployee.setPassword(updateDTO.getPassword());
     repoEmployee.setAddress(updateDTO.getAddress());
-    return employeeRepository.update(repoEmployee);
+    return employeeRepository.save(repoEmployee);
   }
 }

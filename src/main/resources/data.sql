@@ -1,0 +1,2 @@
+INSERT INTO tb_employee (name, email, password, address) VALUES ('Carlos', 'example1@email.com', '1234', 'Rua X, 100')
+INSERT INTO tb_employee (name, email, password, address) VALUES ('João', 'example2@email.com', '1234', 'Rua Y, 200')
